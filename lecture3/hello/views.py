@@ -4,13 +4,16 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello, wordl!")
+    return render(request,"hello/index.html")
 
-def mario(request):
-    return HttpResponse("Hello, Marito!!")
+# def mario(request):
+#     return HttpResponse("Hello, Marito!!")
 
-def karina(request):
-    return HttpResponse("Hello, Karina!")
+# def karina(request):
+#     return HttpResponse("Hello, Kaaaaarina!")
 
 def greet(request, name):
-    return HttpResponse(f"Hello, {name.capitalize()}!")
+        return render(request, "hello/greet.html", 
+                      {"name": name.capitalize()
+        })
+    
